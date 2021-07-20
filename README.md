@@ -22,7 +22,10 @@ Pull requests are welcome, Phillip Stewat as made most of the changes required f
  
 ## Show App
 
-![opening]()
+![opening](img/openpage.png)
+![chart](img/chart.png)
+![cardio](img/cardio.png)
+![weight](img/res.png)
 
 Please make sure to update tests as appropriate.
 
