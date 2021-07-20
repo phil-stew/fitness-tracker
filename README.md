@@ -27,7 +27,7 @@ Pull requests are welcome, Phillip Stewat as made most of the changes required f
 ![cardio](img/cardio.png)
 ![weight](img/res.png)
 
-Please make sure to update tests as appropriate.
+showing app working on local host 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
