@@ -1,5 +1,6 @@
 # fitness-tracker
 tracks fitness level and energy used.
+Also displays them in a graph
 
 
 
