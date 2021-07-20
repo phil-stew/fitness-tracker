@@ -1,5 +1,19 @@
 const router = require("express").Router();
 const { Workout } = require("../model")
+const path = require("path");
+
+
+// router.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+//   });
+
+  router.get("/exercise", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/exercise.html"))
+  });
+
+  router.get("/stats", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/stats.html"))
+  });
 
 router.get("/api/workouts", (req, res) => {
     Workout.aggregate([{
@@ -41,10 +55,10 @@ router.get("/api/workouts/range", async (req, res) => {
                     $sum: "$exercises.duration",
                 }
             }
-        }]).sort({day: -1 }).limit(7)
+        }])
 
-    //const last7Workouts = workouts.splice(workouts.length - 7,  workouts.length - 1)  
-    //res.json(last7Workouts)
+    const last7Workouts = workouts.splice(workouts.length - 7,  workouts.length - 1)  
+    res.json(last7Workouts)
     
 });
 

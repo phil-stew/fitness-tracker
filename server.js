@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3010;
 
 const app = express();
 
@@ -20,11 +20,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 });
 
 // routes
-const apiRouter = (require("./routes/apiRoutes.js"));
-const htmlRouter = (require("./routes/htmlRoutes.js"));
+const apiRoute = (require("./routes/apiRoutes.js"));
+// const htmlRoute = (require("./routes/htmlRoutes.js"));
 
-app.use(apiRouter)
-app.use(htmlRouter)
+app.use(apiRoute)
+// app.use(htmlRoute)
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
