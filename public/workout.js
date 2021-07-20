@@ -78,6 +78,8 @@ function renderNoWorkoutText() {
   strong.textContent = "You have not created a workout yet!"
 
   p.appendChild(strong);
+  p.appendChild(textNode);
+  
   container.appendChild(p);
 }
 

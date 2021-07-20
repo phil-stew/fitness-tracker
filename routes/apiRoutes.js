@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Workout } = require("../model")
 
 router.get("/api/workouts", (req, res) => {
-    Workout.summary([{
+    Workout.aggregate([{
         $addFields: {
             totalDuration: {
                 $sum: "$exercises.duration"
@@ -35,16 +35,16 @@ router.put("/api/workouts/:id", (req, res) => {
 
 router.get("/api/workouts/range", async (req, res) => {
 
-    const workouts = await Workout.summary([{
+    const workouts = await Workout.aggregate([{
             $addFields: {
                 totalDuration: {
                     $sum: "$exercises.duration",
                 }
             }
-        }])
+        }]).sort({day: -1 }).limit(7)
 
-    const last7Workouts = workouts.splice(workouts.length - 7,  workouts.length - 1)  
-    res.json(last7Workouts)
+    //const last7Workouts = workouts.splice(workouts.length - 7,  workouts.length - 1)  
+    //res.json(last7Workouts)
     
 });
 
