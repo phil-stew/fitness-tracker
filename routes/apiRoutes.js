@@ -57,8 +57,8 @@ router.get("/api/workouts/range", async (req, res) => {
             }
         }])
 
-    const last7Workouts = workouts.splice(workouts.length - 7,  workouts.length - 1)  
-    res.json(last7Workouts)
+    const chartWorkOut = workouts.splice(workouts.length - 7,  workouts.length - 1)  
+    res.json(chartWorkOut)
     
 });
 
