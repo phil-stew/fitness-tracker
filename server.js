@@ -19,12 +19,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useFindAndModify: false
 });
 
-// routes
 const apiRoute = (require("./routes/apiRoutes.js"));
-// const htmlRoute = (require("./routes/htmlRoutes.js"));
+
 
 app.use(apiRoute)
-// app.use(htmlRoute)
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
