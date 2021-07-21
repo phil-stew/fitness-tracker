@@ -8,7 +8,7 @@ Also displays them in a graph
 ## Installation
 Not much used to intall just use "NPM START"
 and open in the correct localhost 
-
+or you can open [here](https://fitnesstk.herokuapp.com/)
 
 ## Usage
 
